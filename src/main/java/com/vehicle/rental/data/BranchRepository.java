@@ -56,8 +56,8 @@ public class BranchRepository {
 	}
 
 	public boolean isDuplicateVehicleEntry(Branch branch, String vehicleId) {
-		Optional<Vehicle> vehicle = vehicleMap.get(branch).stream()
-				.filter(tempVehicle -> tempVehicle.getVehicleId().equals(vehicleId)).findAny();
-		return !vehicle.isEmpty();
+		Vehicle vehicle = vehicleMap.get(branch).stream()
+				.filter(tempVehicle -> tempVehicle.getVehicleId().equals(vehicleId)).findAny().orElse(null);
+		return Objects.nonNull(vehicle);
 	}
 }
