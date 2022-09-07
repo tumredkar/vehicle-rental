@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import com.vehicle.rental.service.BranchService;
 
-public class BranchServiceTest {
+public class AddBranchTest {
 
 	/**
 	 * test if branch with valid vehicleType can be created
