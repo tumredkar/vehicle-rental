@@ -21,13 +21,6 @@ public class BookingRepository {
 		vehicleAvailabilityMap = new HashMap<>();
 	}
 
-	public void addVehicle(Vehicle vehicle) {
-		vehicleAvailabilityMap.putIfAbsent(vehicle, new ArrayList<>());
-		for (int i = 0; i < SLOTS_PER_DAY; i++) {
-			vehicleAvailabilityMap.get(vehicle).add(true);
-		}
-	}
-
 	public static synchronized BookingRepository getInstance() {
 		if (instance == null) {
 			instance = new BookingRepository();
@@ -35,6 +28,25 @@ public class BookingRepository {
 		return instance;
 	}
 
+	/**
+	 * add vehicle to vehicleAvailabilityMap to keep track of vehicles available
+	 * slots
+	 * 
+	 * @param vehicle
+	 */
+	public void addVehicle(Vehicle vehicle) {
+		vehicleAvailabilityMap.putIfAbsent(vehicle, new ArrayList<>());
+		for (int i = 0; i < SLOTS_PER_DAY; i++) {
+			vehicleAvailabilityMap.get(vehicle).add(true);
+		}
+	}
+
+	/**
+	 * get availability data of vehicle
+	 * 
+	 * @param vehicle
+	 * @return
+	 */
 	public List<Boolean> getVehicleAvailability(Vehicle vehicle) {
 		return vehicleAvailabilityMap.get(vehicle);
 	}

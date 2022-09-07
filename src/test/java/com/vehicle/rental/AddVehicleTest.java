@@ -5,14 +5,14 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import com.vehicle.rental.common.MyConstants;
-import com.vehicle.rental.service.BookingService;
+import com.vehicle.rental.service.BranchService;
+import com.vehicle.rental.service.VehicleService;
 
 public class AddVehicleTest {
 
 	@BeforeAll
 	private static void init() {
-		BookingService.addBranch("ADD_BRANCH B1 CAR,BIKE,VAN");
+		BranchService.addBranch("ADD_BRANCH B1 CAR,BIKE,VAN");
 	}
 
 	/**
@@ -21,7 +21,7 @@ public class AddVehicleTest {
 	@Test
 	public void addVehicle1() {
 		try {
-			assertEquals(MyConstants.TRUE, BookingService.addVehicle("ADD_VEHICLE B1 CAR V1 500"));
+			assertEquals(Boolean.toString(true).toUpperCase(), VehicleService.addVehicle("ADD_VEHICLE B1 CAR V1 500"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -33,7 +33,7 @@ public class AddVehicleTest {
 	@Test
 	public void addVehicle2() {
 		try {
-			assertEquals(MyConstants.FALSE, BookingService.addVehicle("ADD_VEHICLE B2 CAR V1 500"));
+			assertEquals(Boolean.toString(false).toUpperCase(), VehicleService.addVehicle("ADD_VEHICLE B2 CAR V1 500"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -45,7 +45,7 @@ public class AddVehicleTest {
 	@Test
 	public void addVehicle3() {
 		try {
-			assertEquals(MyConstants.FALSE, BookingService.addVehicle("ADD_VEHICLE B1 CAR V1 500"));
+			assertEquals(Boolean.toString(false).toUpperCase(), VehicleService.addVehicle("ADD_VEHICLE B1 CAR V1 500"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -58,7 +58,7 @@ public class AddVehicleTest {
 	@Test
 	public void addVehicle4() {
 		try {
-			assertEquals(MyConstants.FALSE, BookingService.addVehicle("ADD_VEHICLE B1 BUS V1 500"));
+			assertEquals(Boolean.toString(false).toUpperCase(), VehicleService	.addVehicle("ADD_VEHICLE B1 BUS V1 500"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

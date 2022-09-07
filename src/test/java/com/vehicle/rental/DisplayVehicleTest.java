@@ -6,16 +6,19 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import com.vehicle.rental.service.BookingService;
+import com.vehicle.rental.service.BranchService;
+import com.vehicle.rental.service.DisplayService;
+import com.vehicle.rental.service.VehicleService;
 
 public class DisplayVehicleTest {
 
 	@BeforeAll
 	private static void init() {
-		BookingService.addBranch("ADD_BRANCH B1 CAR,BIKE,VAN");
-		BookingService.addVehicle("ADD_VEHICLE B1 CAR V2 1000");
-		BookingService.addVehicle("ADD_VEHICLE B1 CAR V1 500");
-		BookingService.addVehicle("ADD_VEHICLE B1 BIKE V4 300");
-		BookingService.addVehicle("ADD_VEHICLE B1 BIKE V3 250");
+		BranchService.addBranch("ADD_BRANCH B1 CAR,BIKE,VAN");
+		VehicleService.addVehicle("ADD_VEHICLE B1 CAR V2 1000");
+		VehicleService.addVehicle("ADD_VEHICLE B1 CAR V1 500");
+		VehicleService.addVehicle("ADD_VEHICLE B1 BIKE V4 300");
+		VehicleService.addVehicle("ADD_VEHICLE B1 BIKE V3 250");
 		BookingService.bookVehicle("BOOK B1 BIKE 2 3");
 		BookingService.bookVehicle("BOOK B1 BIKE 2 3");
 	}
@@ -24,9 +27,9 @@ public class DisplayVehicleTest {
 	 * display vehicles available in specific slot
 	 */
 	@Test
-	public void bookVehicle1() {
+	public void displayVehicle() {
 		try {
-			BookingService.displayVehicles("DISPLAY_VEHICLES B1 1 5");
+			DisplayService.displayVehicles("DISPLAY_VEHICLES B1 1 5");
 			assertTrue(true);
 		} catch (Exception e) {
 			e.printStackTrace();

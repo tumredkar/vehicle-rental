@@ -6,17 +6,19 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import com.vehicle.rental.service.BookingService;
+import com.vehicle.rental.service.BranchService;
+import com.vehicle.rental.service.VehicleService;
 
 class BookVehicleTest {
 
 	@BeforeAll
 	private static void init() {
-		BookingService.addBranch("ADD_BRANCH B1 CAR,BIKE,VAN");
-		BookingService.addVehicle("ADD_VEHICLE B1 CAR V2 1000");
-		BookingService.addVehicle("ADD_VEHICLE B1 CAR V1 500");
-		BookingService.addVehicle("ADD_VEHICLE B1 BIKE V4 300");
-		BookingService.addVehicle("ADD_VEHICLE B1 BIKE V3 250");
-		BookingService.addVehicle("ADD_VEHICLE B1 VAN V5 2000");
+		BranchService.addBranch("ADD_BRANCH B1 CAR,BIKE,VAN");
+		VehicleService.addVehicle("ADD_VEHICLE B1 CAR V2 1000");
+		VehicleService.addVehicle("ADD_VEHICLE B1 CAR V1 500");
+		VehicleService.addVehicle("ADD_VEHICLE B1 BIKE V4 300");
+		VehicleService.addVehicle("ADD_VEHICLE B1 BIKE V3 250");
+		VehicleService.addVehicle("ADD_VEHICLE B1 VAN V5 2000");
 	}
 
 	/**
