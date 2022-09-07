@@ -9,7 +9,7 @@ import com.vehicle.rental.service.BookingService;
 import com.vehicle.rental.service.BranchService;
 import com.vehicle.rental.service.VehicleService;
 
-class BookVehicleTest {
+class BookingServiceTest {
 
 	@BeforeAll
 	private static void init() {

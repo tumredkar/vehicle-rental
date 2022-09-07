@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 import com.vehicle.rental.service.BranchService;
 import com.vehicle.rental.service.VehicleService;
 
-public class AddVehicleTest {
+public class VehicleServiceTest {
 
 	@BeforeAll
 	private static void init() {

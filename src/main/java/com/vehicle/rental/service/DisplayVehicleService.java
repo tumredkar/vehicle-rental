@@ -11,7 +11,7 @@ import com.vehicle.rental.model.Vehicle;
  * @author Tushar Umredkar
  *
  */
-public class DisplayService {
+public class DisplayVehicleService {
 
 	public static void displayVehicles(String data) {
 		String[] lineElements = data.split("\\s+");

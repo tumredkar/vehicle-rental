@@ -7,10 +7,10 @@ import org.junit.jupiter.api.Test;
 
 import com.vehicle.rental.service.BookingService;
 import com.vehicle.rental.service.BranchService;
-import com.vehicle.rental.service.DisplayService;
+import com.vehicle.rental.service.DisplayVehicleService;
 import com.vehicle.rental.service.VehicleService;
 
-public class DisplayVehicleTest {
+public class DisplayVehicleServiceTest {
 
 	@BeforeAll
 	private static void init() {
@@ -29,7 +29,7 @@ public class DisplayVehicleTest {
 	@Test
 	public void displayVehicle() {
 		try {
-			DisplayService.displayVehicles("DISPLAY_VEHICLES B1 1 5");
+			DisplayVehicleService.displayVehicles("DISPLAY_VEHICLES B1 1 5");
 			assertTrue(true);
 		} catch (Exception e) {
 			e.printStackTrace();

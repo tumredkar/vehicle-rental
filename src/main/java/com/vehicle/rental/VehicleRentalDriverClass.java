@@ -7,7 +7,7 @@ import java.io.FileReader;
 import com.vehicle.rental.model.Action;
 import com.vehicle.rental.service.BookingService;
 import com.vehicle.rental.service.BranchService;
-import com.vehicle.rental.service.DisplayService;
+import com.vehicle.rental.service.DisplayVehicleService;
 import com.vehicle.rental.service.VehicleService;
 
 /**
@@ -37,7 +37,7 @@ public class VehicleRentalDriverClass {
 						System.out.println(BookingService.bookVehicle(line));
 						break;
 					case DISPLAY_VEHICLES:
-						DisplayService.displayVehicles(line);
+						DisplayVehicleService.displayVehicles(line);
 						break;
 					default:
 						System.out.println("Invalid action");
